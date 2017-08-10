@@ -33,10 +33,10 @@ class TCP_ENV:
         if abs(self.s[0]) > 2.4:
             self.terminal = 1
             return
-        if abs(self.s[2]) > 2:
+        if abs(self.s[1]) > 2:
             self.terminal = 1
             return
-        if abs(self.s[1]) > 12 * math.pi / 180:
+        if abs(self.s[2]) > 12 * math.pi / 180:
             self.terminal = 1
             return
         if abs(self.s[3]) > 1.5:
@@ -58,20 +58,20 @@ class TCP_ENV:
             self.a = a_set
 
     def ProcessDynamic(self):
-        ay = (self.g * math.sin(self.s[1])
-              + math.cos(self.s[1]) * (self.muc * sgn(self.s[2]) - self.a
-                                       - self.m * self.l * self.s[3] * self.s[3] * math.sin(self.s[1]))
+        ay = (self.g * math.sin(self.s[2])
+              + math.cos(self.s[2]) * (self.muc * sgn(self.s[1]) - self.a
+                                       - self.m * self.l * self.s[3] * self.s[3] * math.sin(self.s[2]))
               / (self.M + self.m)
               - self.mup * self.s[3] / (self.m * self.l)) / (self.l
                                                              * (
-                                                             0.75 - self.m * math.cos(self.s[2]) * math.cos(self.s[1]))
+                                                             0.75 - self.m * math.cos(self.s[1]) * math.cos(self.s[2]))
                                                              / (self.M + self.m))
-        ax = (self.a + self.m * self.l * (self.s[3] * self.s[3] * math.sin(self.s[1])
-                                          - ay * math.cos(self.s[1])
-                                          - self.muc * sgn(self.s[1]))) / (self.M + self.m)
+        ax = (self.a + self.m * self.l * (self.s[3] * self.s[3] * math.sin(self.s[2])
+                                          - ay * math.cos(self.s[2])
+                                          - self.muc * sgn(self.s[2]))) / (self.M + self.m)
         ## print(self.s)
-        self.s[0] = self.s[0] + self.s[2] * self.tau
-        self.s[1] = self.s[1] + self.s[3] * self.tau
-        self.s[2] = self.s[2] + ax * self.tau
+        self.s[0] = self.s[0] + self.s[1] * self.tau
+        self.s[1] = self.s[1] + ax * self.tau
+        self.s[2] = self.s[2] + self.s[3] * self.tau
         self.s[3] = self.s[3] + ay * self.tau
         self.CheckTerm()

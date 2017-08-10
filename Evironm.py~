@@ -1,8 +1,0 @@
-class TCPEnvrm:
-    def __init__(self):
-        x = 0 ## displacement of cart
-        y = 0 ## displacement of pole
-        vx = 0
-        vy = 0
-        M = 1 ## mass of cart
-        m = 0.1 ## mass of pole
