@@ -25,6 +25,8 @@ class TCP_ENV:
         self.amax = 20  ## maximum force applied
         self.a = 0  ## force applied
         self.terminal = 0  ## state of termination
+        self.Q = np.array(1.25, 1, 12, 0.25) ## reward coe1
+        self.R = 0.01 ## reward coe2
 
     def GetState(self):
         return self.s
@@ -45,7 +47,9 @@ class TCP_ENV:
 
     def GetReward(self):
         if self.terminal == 0:
-            return 0.01
+            tmp = self.s*self.Q*self.s
+            r = -tmp - self.a*self.R*self.a
+            return r
         else:
             return 0
 
