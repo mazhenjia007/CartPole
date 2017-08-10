@@ -12,7 +12,7 @@ def Angel(v1, v2):
 
 def CartPoleTraining():
     theta0 = np.random.rand(1, 4)*10-5
-    ita0 = np.random.rand()*2-1
+    ita0 = np.random.rand(1, 1)*2-1
     params = np.hstack((theta0, ita0))
     alpha = 0.1
     gamma = 0.95
@@ -24,7 +24,7 @@ def CartPoleTraining():
     hENV = CPENV.TCP_ENV()
 
     maxIter = 100000
-    Vs = np.zeros(1, maxIter)
+    Vs = np.zeros((1, maxIter))
     for iIter in range(maxIter):
         delta, Vs[iIter] = CPAGNT.ExecEpi(params, gamma, hENV)
         
@@ -37,7 +37,7 @@ def CartPoleTraining():
             n = 1
     
     hFile = open('result.txt', 'w')
-    for i in params.size:
+    for i in range(params.size):
         print(params[i])
     hFile.close()
 
