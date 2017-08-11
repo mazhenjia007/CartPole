@@ -26,7 +26,7 @@ def ExecEpi(params, gamma, hENV=None):
         mu = tmp.sum()
         sigma = 0.1 + 1/(1+math.exp(ita))
         a = np.random.normal()*sigma+mu
-        p = norm.pdf(a, mu, sigma)
+        ## p = norm.pdf(a, mu, sigma)
 
         ## take a and get reward
         hENV.SetAction(a)
@@ -34,8 +34,8 @@ def ExecEpi(params, gamma, hENV=None):
         r = hENV.GetReward()
 
         ## calculate parameters
-        d1 = (a-mu)/(sigma**2)*p*(C*s)
-        d2 = math.exp(ita)/(sigma*((1+math.exp(ita))**2))*(1-((a-mu)/sigma)**2)*p
+        d1 = (a-mu)/(sigma**2)*(C*s)
+        d2 = math.exp(ita)/(sigma*((1+math.exp(ita))**2))*(1-((a-mu)/sigma)**2)
         z = z + np.hstack((d1, d2))
         delta = delta + (r*(gamma**t))*z
         V = V + r*(gamma**t)

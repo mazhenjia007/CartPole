@@ -34,8 +34,8 @@ def CPTrain():
 
     alpha = 0.1
     gamma = 0.95
-    Delta = np.array([0, 0, 0, 0, 0])
-    Delta_past = Delta
+    Delta = np.array([1, 1, 1, 1, 1])
+    ## Delta_past = Delta
     n = 0
     eps = 3/1000
 
@@ -47,7 +47,8 @@ def CPTrain():
     Pms = np.zeros((maxIter, 5))
     for iIter in range(maxIter):
         perc = float(iIter) / float(maxIter) * 100
-        sys.stdout.write("%d / %d, %.4f%%\r" % (iIter, maxIter, perc))
+        ## sys.stdout.write("%d / %d, %.4f%%\r" % (iIter, maxIter, perc))
+        sys.stdout.write("%.4f%%\r" % perc)
 
         delta, Vs[iIter] = CPAGNT.ExecEpi(params, gamma, hENV)
         
