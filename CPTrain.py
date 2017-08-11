@@ -36,7 +36,7 @@ def CPTrain():
     gamma = 0.95
     Delta = np.array([0, 0, 0, 0, 0])
     Delta_past = Delta
-    n = 1
+    n = 0
     eps = 3/1000
 
     hENV = CPENV.TCP_ENV()
@@ -51,9 +51,14 @@ def CPTrain():
 
         delta, Vs[iIter] = CPAGNT.ExecEpi(params, gamma, hENV)
         
-        Delta_past = Delta
-        Delta = (n-1)/n*Delta + delta/n
-        n = n + 1
+        if n==0:
+            Delta_past = Delta
+            Delta = delta
+            n = 1
+        else:
+            Delta_past = Delta
+            Delta = (n-1)/n*Delta + delta/n
+            n = n + 1
 
         if Angel(Delta_past, Delta)<eps:
             params = params + alpha * delta
@@ -66,7 +71,7 @@ def CPTrain():
     hFile.close()
 
     hFile = open('parameters.txt', 'w')
-    hFile.write("%d\n" % (nUpdate))
+    ## hFile.write("%d\n" % (nUpdate))
     for i in range(nUpdate):
         for j in range(5):
             hFile.write("%f " % (Pms[i][j]))
