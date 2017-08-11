@@ -48,9 +48,12 @@ class TCP_ENV:
             return
 
     def GetReward(self):
-        tmp = self.s*self.Q*self.s
-        r = -tmp.sum() - self.a*self.R*self.a
-        return r
+        if self.terminal == 0:
+            tmp = self.s*self.Q*self.s
+            r = -tmp.sum() - self.a*self.R*self.a
+            return r
+        else:
+            return 0
 
     def SetAction(self, a_set):
         if a_set > self.amax:
@@ -61,15 +64,17 @@ class TCP_ENV:
             self.a = a_set
 
     def ProcessDynamic(self):
-        vx = self.s[1]
-        y = self.s[2]
-        vy = self.s[3]
-        sy = math.sin(y)
-        cy = math.cos(y)
-        sgnx = sgn(vx)
-        ay = (self.g*sy + cy*(self.muc*sgnx - self.a - self.m*self.l*(vy**2)*sy)/(self.M + self.m)
-              - self.mup*vy/(self.m*self.l)) / (self.l*(0.75 - self.m*(cy**2)/(self.M + self.m)))
-        ax = (self.a + self.m*self.l*((vy**2)*sy - ay*cy) - self.muc*sgnx)/(self.M + self.m)
+        ay = (self.g * math.sin(self.s[2])
+              + math.cos(self.s[2]) * (self.muc * sgn(self.s[1]) - self.a
+                                       - self.m * self.l * self.s[3] * self.s[3] * math.sin(self.s[2]))
+              / (self.M + self.m)
+              - self.mup * self.s[3] / (self.m * self.l)) / (self.l
+                                                             * (
+                                                             0.75 - self.m * math.cos(self.s[1]) * math.cos(self.s[2]))
+                                                             / (self.M + self.m))
+        ax = (self.a + self.m * self.l * (self.s[3] * self.s[3] * math.sin(self.s[2])
+                                          - ay * math.cos(self.s[2])
+                                          - self.muc * sgn(self.s[2]))) / (self.M + self.m)
         ## print(self.s)
         self.s[0] = self.s[0] + self.s[1] * self.tau
         self.s[1] = self.s[1] + ax * self.tau
