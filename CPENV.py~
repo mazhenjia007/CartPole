@@ -1,6 +1,6 @@
 import math
 import numpy as np
-
+import sys
 
 def sgn(x):
     if x == 0:
@@ -12,7 +12,7 @@ def sgn(x):
 
 class TCP_ENV:
     def __init__(self):
-        np.random.seed(0)
+        ## np.random.seed(0)
         self.Init()
         self.M = 1  ## mass of cart
         self.m = 0.1  ## mass of pole
@@ -24,6 +24,7 @@ class TCP_ENV:
         self.amax = 20  ## maximum force applied
         self.Q = np.array([1.25, 1, 12, 0.25]) ## reward coe1
         self.R = 0.01 ## reward coe2
+        self.time = 0 ## time step
 
     def Init(self):
         self.s = np.random.normal(size=4) * 0.1
@@ -75,4 +76,12 @@ class TCP_ENV:
         self.s[1] = self.s[1] + ax * self.tau
         self.s[2] = self.s[2] + self.s[3] * self.tau
         self.s[3] = self.s[3] + ay * self.tau
+        self.time = self.time + self.tau
         self.CheckTerm()
+
+    def Display(self):
+        x = self.s[0]
+        vx = self.s[1]
+        y = self.s[2]
+        vy = self.s[3]
+        sys.stdout.write("Time:%.3f: a=%.2f x=%.2f vx=%.2f y=%.2f vy=%.2f" % (self.time, x, vx, y, vy))

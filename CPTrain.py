@@ -50,7 +50,7 @@ def CPTrain():
     for iIter in range(maxIter):
         perc = float(iIter) / float(maxIter) * 100
         ## sys.stdout.write("%d / %d, %.4f%%\r" % (iIter, maxIter, perc))
-        sys.stdout.write("%.4f%%\r" % perc)
+        ## sys.stdout.write("%.4f%%\r" % perc)
 
         delta, Vs[iIter] = CPAGNT.ExecEpi(params, gamma, hENV)
         

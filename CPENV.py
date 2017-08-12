@@ -1,6 +1,6 @@
 import math
 import numpy as np
-
+import sys
 
 def sgn(x):
     if x == 0:
@@ -24,11 +24,13 @@ class TCP_ENV:
         self.amax = 20  ## maximum force applied
         self.Q = np.array([1.25, 1, 12, 0.25]) ## reward coe1
         self.R = 0.01 ## reward coe2
+        self.time = 0 ## time step
 
     def Init(self):
         self.s = np.random.normal(size=4) * 0.1
         self.terminal = 0  ## state of termination
         self.a = 0 ## force applied
+        self.time = 0
 
     def GetState(self):
         return self.s
@@ -75,4 +77,13 @@ class TCP_ENV:
         self.s[1] = self.s[1] + ax * self.tau
         self.s[2] = self.s[2] + self.s[3] * self.tau
         self.s[3] = self.s[3] + ay * self.tau
+        self.time = self.time + self.tau
         self.CheckTerm()
+
+    def Display(self):
+        x = self.s[0]
+        vx = self.s[1]
+        y = self.s[2]
+        vy = self.s[3]
+        sys.stdout.write("Time:%5.3f: a=%5.2f x=%5.2f vx=%5.2f y=%5.2f vy=%5.2f\n" 
+                         % (self.time, self.a, x, vx, y, vy))

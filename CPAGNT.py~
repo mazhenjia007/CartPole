@@ -35,7 +35,8 @@ def ExecEpi(params, gamma, hENV=None):
 
         ## calculate parameters
         d1 = (a-mu)/(sigma**2)*(C*s)
-        d2 = math.exp(ita)/(sigma*((1+math.exp(ita))**2))*(1-((a-mu)/sigma)**2)
+        ## d2 = math.exp(ita)/(sigma*((1+math.exp(ita))**2))*(1-((a-mu)/sigma)**2)
+        d2 = (1-(((a-mu)/sigma)**2))/sigma*math.exp(ita)/((1+math.exp(ita))**2)
         z = z + np.hstack((d1, d2))
         delta = delta + (r*(gamma**t))*z
         V = V + r*(gamma**t)

@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60d9e22d-06cc-461c-8175-9fb6988e00ce" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPAGNT.py" afterPath="$PROJECT_DIR$/CPAGNT.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPENV.py" afterPath="$PROJECT_DIR$/CPENV.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPTrain.py" afterPath="$PROJECT_DIR$/CPTrain.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parameters.txt" afterPath="$PROJECT_DIR$/parameters.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/result.txt" afterPath="$PROJECT_DIR$/result.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,23 +14,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CPENV.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CPENV.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CPENV.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1125">
-              <caret line="76" column="38" lean-forward="false" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
+            <state relative-caret-position="431">
+              <caret line="75" column="45" lean-forward="true" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1502507477000" expanded="true" signature="177:691" ph="..." />
-                <marker date="1502507477000" expanded="true" signature="712:847" ph="..." />
-                <marker date="1502507477000" expanded="true" signature="872:894" ph="..." />
-                <marker date="1502507477000" expanded="true" signature="920:1261" ph="..." />
-                <marker date="1502507477000" expanded="true" signature="953:1002" ph="..." />
-                <marker date="1502507477000" expanded="true" signature="1033:1082" ph="..." />
-                <marker date="1502507477000" expanded="true" signature="1130:1179" ph="..." />
-                <marker date="1502507477000" expanded="true" signature="1212:1261" ph="..." />
-                <marker date="1502507477000" expanded="true" signature="1287:1385" ph="..." />
-                <marker date="1502507477000" expanded="true" signature="1418:1585" ph="..." />
               </folding>
             </state>
           </provider>
@@ -43,36 +29,20 @@
       <file leaf-file-name="CPTrain.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CPTrain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
+            <state relative-caret-position="42">
               <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1502507712000" expanded="true" signature="120:394" ph="..." />
-                <marker date="1502507712000" expanded="true" signature="1638:1671" ph="..." />
-                <marker date="1502507712000" expanded="true" signature="1638:2090" ph="..." />
-                <marker date="1502507712000" expanded="true" signature="1933:2031" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CPValue.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CPValue.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="34" column="62" lean-forward="false" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CPAGNT.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CPAGNT.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CPAGNT.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="28" column="11" lean-forward="false" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+            <state relative-caret-position="360">
+              <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -89,9 +59,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Evironm.py" />
-        <option value="$PROJECT_DIR$/CPENV.py" />
         <option value="$PROJECT_DIR$/CPTrain.py" />
         <option value="$PROJECT_DIR$/CPAGNT.py" />
+        <option value="$PROJECT_DIR$/CPENV.py" />
       </list>
     </option>
   </component>
@@ -261,7 +231,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30634278" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30623305" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39950064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -295,16 +265,6 @@
           <caret line="76" column="38" lean-forward="false" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1502507477000" expanded="true" signature="177:691" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="712:847" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="872:894" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="920:1261" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="953:1002" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1033:1082" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1130:1179" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1212:1261" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1287:1385" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1418:1585" ph="..." />
           </folding>
         </state>
       </provider>
@@ -315,10 +275,6 @@
           <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1502507712000" expanded="true" signature="120:394" ph="..." />
-            <marker date="1502507712000" expanded="true" signature="1638:1671" ph="..." />
-            <marker date="1502507712000" expanded="true" signature="1638:2090" ph="..." />
-            <marker date="1502507712000" expanded="true" signature="1933:2031" ph="..." />
           </folding>
         </state>
       </provider>
@@ -328,7 +284,7 @@
         <state relative-caret-position="435">
           <caret line="34" column="62" lean-forward="true" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -349,16 +305,6 @@
           <caret line="81" column="38" lean-forward="false" selection-start-line="81" selection-start-column="38" selection-end-line="81" selection-end-column="38" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1502507477000" expanded="true" signature="177:691" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="712:847" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="872:894" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="920:1261" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="953:1002" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1033:1082" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1130:1179" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1212:1261" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1287:1385" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1418:1585" ph="..." />
           </folding>
         </state>
       </provider>
@@ -369,10 +315,6 @@
           <caret line="57" column="32" lean-forward="false" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1502507712000" expanded="true" signature="120:394" ph="..." />
-            <marker date="1502507712000" expanded="true" signature="1638:1671" ph="..." />
-            <marker date="1502507712000" expanded="true" signature="1638:2090" ph="..." />
-            <marker date="1502507712000" expanded="true" signature="1933:2031" ph="..." />
           </folding>
         </state>
       </provider>
@@ -383,16 +325,6 @@
           <caret line="81" column="38" lean-forward="true" selection-start-line="81" selection-start-column="38" selection-end-line="81" selection-end-column="38" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1502507477000" expanded="true" signature="177:691" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="712:847" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="872:894" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="920:1261" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="953:1002" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1033:1082" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1130:1179" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1212:1261" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1287:1385" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1418:1585" ph="..." />
           </folding>
         </state>
       </provider>
@@ -406,8 +338,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CPValue.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
+        <state relative-caret-position="510">
           <caret line="34" column="62" lean-forward="false" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#11#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPAGNT.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -416,42 +358,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CPTrain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
+        <state relative-caret-position="42">
           <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1502507712000" expanded="true" signature="120:394" ph="..." />
-            <marker date="1502507712000" expanded="true" signature="1638:1671" ph="..." />
-            <marker date="1502507712000" expanded="true" signature="1638:2090" ph="..." />
-            <marker date="1502507712000" expanded="true" signature="1933:2031" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CPENV.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="76" column="38" lean-forward="false" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1502507477000" expanded="true" signature="177:691" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="712:847" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="872:894" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="920:1261" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="953:1002" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1033:1082" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1130:1179" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1212:1261" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1287:1385" ph="..." />
-            <marker date="1502507477000" expanded="true" signature="1418:1585" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPAGNT.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="28" column="11" lean-forward="false" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+        <state relative-caret-position="431">
+          <caret line="75" column="45" lean-forward="true" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
