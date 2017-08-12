@@ -12,7 +12,7 @@ def sgn(x):
 
 class TCP_ENV:
     def __init__(self):
-        np.random.seed(0)
+        ## np.random.seed(0)
         self.Init()
         self.M = 1  ## mass of cart
         self.m = 0.1  ## mass of pole

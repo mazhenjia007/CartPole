@@ -20,8 +20,10 @@ def Angel(v1, v2):
     s = inp/math.sqrt(l1*l2)
     if s>1:
         return 0
+    elif s<-1:
+        return math.pi
     else:
-        return math.acos(inp/math.sqrt(l1*l2))
+        return math.acos(s)
 
 def CPTrain():
     ## theta0 = np.random.rand(4, 1)*10-5
@@ -34,7 +36,7 @@ def CPTrain():
 
     alpha = 0.1
     gamma = 0.95
-    Delta = np.array([1, 1, 1, 1, 1])
+    Delta = np.array([0, 0, 0, 0, 1])
     ## Delta_past = Delta
     n = 0
     eps = 3/1000
@@ -53,19 +55,18 @@ def CPTrain():
         delta, Vs[iIter] = CPAGNT.ExecEpi(params, gamma, hENV)
         
         if n==0:
-            Delta_past = Delta
             Delta = delta
+            ## Delta_past = Delta
             n = 1
         else:
+            n = n + 1
             Delta_past = Delta
             Delta = (n-1)/n*Delta + delta/n
-            n = n + 1
-
-        if Angel(Delta_past, Delta)<eps:
-            params = params + alpha * delta
-            n = 1
-            Pms[nUpdate, :] = params
-            nUpdate = nUpdate + 1
+            if Angel(Delta_past, Delta)<eps:
+                params = params + alpha * Delta
+                n = 1
+                Pms[nUpdate, :] = params
+                nUpdate = nUpdate + 1
     
     hFile = open('result.txt', 'w')
     hFile.write("%f %f %f %f %f\n" % (params[0], params[1], params[2], params[3], params[4]))
