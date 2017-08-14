@@ -19,6 +19,9 @@ def ExecEpi(params, gamma, hENV=None):
     C = np.array([1/2.4, 1/2, 180/(12*math.pi), 1/1.5])
     V = 0
 
+    iIter = 0
+    nDis = 30
+
     while hENV.terminal==0:
         s = hENV.GetState()
         ## draw an action a
@@ -26,7 +29,12 @@ def ExecEpi(params, gamma, hENV=None):
         mu = tmp.sum()
         sigma = 0.1 + 1/(1+math.exp(ita))
         a = np.random.normal()*sigma+mu
-        ## p = norm.pdf(a, mu, sigma)
+
+        if iIter==nDis:
+            ## hENV.Display()
+            iIter = 0
+        else:
+            iIter = iIter + 1
 
         ## take a and get reward
         hENV.SetAction(a)
@@ -42,4 +50,4 @@ def ExecEpi(params, gamma, hENV=None):
         V = V + r*(gamma**t)
         t = t + 1
 
-    return (delta, V)
+    return (delta, V, t)

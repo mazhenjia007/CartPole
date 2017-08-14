@@ -29,10 +29,9 @@ def ExecEpi(params, gamma, hENV=None):
         mu = tmp.sum()
         sigma = 0.1 + 1/(1+math.exp(ita))
         a = np.random.normal()*sigma+mu
-        ## p = norm.pdf(a, mu, sigma)
 
         if iIter==nDis:
-            hENV.Display()
+            ## hENV.Display()
             iIter = 0
         else:
             iIter = iIter + 1
@@ -51,4 +50,4 @@ def ExecEpi(params, gamma, hENV=None):
         V = V + r*(gamma**t)
         t = t + 1
 
-    return (delta, V)
+    return (delta, V, hENV.time)

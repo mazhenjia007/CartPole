@@ -18,13 +18,14 @@ class TCP_ENV:
         self.m = 0.1  ## mass of pole
         self.l = 0.5  ## half the length of pole
         self.g = 9.8  ## gravity acceleration
-        self.muc = 0.0005  ## friction coe of cart
-        self.mup = 0.000002  ## friction coe of pole
+        self.muc = 0 ## 0.0005  ## friction coe of cart
+        self.mup = 0 ## 0.000002  ## friction coe of pole
         self.tau = 1 / 60  ## time interval
         self.amax = 20  ## maximum force applied
         self.Q = np.array([1.25, 1, 12, 0.25]) ## reward coe1
         self.R = 0.01 ## reward coe2
         self.time = 0 ## time step
+        self.maxtime = 100 ## over this time, regarded as convergence
 
     def Init(self):
         self.s = np.random.normal(size=4) * 0.1
@@ -47,6 +48,9 @@ class TCP_ENV:
             return
         if abs(self.s[3]) > 1.5:
             self.terminal = 1
+            return
+        if self.time > self.maxtime:
+            self.terminal = -1
             return
 
     def GetReward(self):
