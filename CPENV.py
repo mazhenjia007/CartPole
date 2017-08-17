@@ -13,13 +13,14 @@ def sgn(x):
 class TCP_ENV:
     def __init__(self):
         ## np.random.seed(0)
+        self.s = np.zeros(4)
         self.Init()
         self.M = 1  ## mass of cart
         self.m = 0.1  ## mass of pole
         self.l = 0.5  ## half the length of pole
         self.g = 9.8  ## gravity acceleration
-        self.muc = 0 ## 0.0005  ## friction coe of cart
-        self.mup = 0 ## 0.000002  ## friction coe of pole
+        self.muc = 0.0005  ## friction coe of cart
+        self.mup = 0.000002  ## friction coe of pole
         self.tau = 1 / 60  ## time interval
         self.amax = 20  ## maximum force applied
         self.Q = np.array([1.25, 1, 12, 0.25]) ## reward coe1
@@ -28,7 +29,11 @@ class TCP_ENV:
         self.maxtime = 100 ## over this time, regarded as convergence
 
     def Init(self):
-        self.s = np.random.normal(size=4) * 0.1
+        ## self.s = np.random.normal(size=4) * 0.1
+        self.s[0] = np.random.normal(0, 0.1)
+        self.s[1] = np.random.normal(0, 0.1)
+        self.s[2] = np.random.normal(0, 0.03)
+        self.s[3] = np.random.normal(0, 0.1)
         self.terminal = 0  ## state of termination
         self.a = 0 ## force applied
         self.time = 0

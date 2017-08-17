@@ -59,7 +59,7 @@ def TrainEPS(nIter, InitParams, hENV=None):
     V = 0
     t = 0
     flag = 1
-    while flag==1 or n>nIter:
+    while (flag==1  and n<nIter):
         delta, V_new, t_new = CPAGNT.ExecEpi(params, gamma, hENV)
         
         if n==0:
@@ -84,7 +84,7 @@ def TrainEPS(nIter, InitParams, hENV=None):
 def CPTrain():
     hENV = CPENV.TCP_ENV()
 
-    nTrail = 100
+    nTrail = 20
     params_best = np.array([0, 0, 0, 0, 0])
     V_best = 0
     t_best = 0
@@ -115,11 +115,17 @@ def CPTrain():
 
     sys.stdout.write("\nMain Iteration:...\n")
 
+    alpha = 0.1
+    gamma = 0.95
+    Delta = np.array([0, 0, 0, 0, 1])
+    eps = 3/1000
+    n = 0
+
     nIter = 100000
-    Vs = np.zeros((maxIter))
-    ts = np.zeros((maxIter))
+    Vs = np.zeros((nIter))
+    ts = np.zeros((nIter))
     nUpdate = 0
-    Pms = np.zeros((maxIter, 5))
+    Pms = np.zeros((nIter, 5))
     for iIter in range(nIter):
         perc = float(iIter) / float(nIter) * 100
         sys.stdout.write("\r%.4f%%" % perc)

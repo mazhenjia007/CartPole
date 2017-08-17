@@ -55,6 +55,9 @@ def TrainEPS(nIter, InitParams, hENV=None):
             if Angel(Delta_past, Delta)<eps:
                 params = params + alpha * Delta
                 n = 1
+    
+    params = params + alpha * Delta
+
     n = 0
     V = 0
     t = 0
@@ -74,9 +77,9 @@ def TrainEPS(nIter, InitParams, hENV=None):
             V = (n-1)/n*V + V_new/n
             t = (n-1)/n*t + t_new/n
 
-            if abs(V-V_past)<1e-6:
+            if abs(V-V_past)<1e-3:
                 flag = 0
-            if abs(t-t_past)<1e-6:
+            if abs(t-t_past)<1e-4:
                 flag = 0
 
     return (params, V, t)
@@ -145,6 +148,8 @@ def CPTrain():
                 Pms[nUpdate, :] = params
                 nUpdate = nUpdate + 1
     
+    params = params + alpha * Delta
+
     hFile = open('result.txt', 'w')
     hFile.write("%f %f %f %f %f\n" % (params[0], params[1], params[2], params[3], params[4]))
     hFile.close()
@@ -160,5 +165,6 @@ def CPTrain():
     sys.stdout.write("\n%d\n" % nUpdate)
 
     ## plt.plot(Vs)
+    plt.plot(ts)
 
 CPTrain()

@@ -45,9 +45,9 @@ def CPValue():
                 t_past = t
                 V = (n-1)/n*V + V_new/n
                 t = (n-1)/n*t + t_new/n
-                if abs(V - V_past) < eps:
+                if abs(V - V_past) < 1e-3:
                     flag = 0
-                if abs(t - t_past) < eps:
+                if abs(t - t_past) < 1e-4:
                     flag = 0
 
             iIter = iIter + 1

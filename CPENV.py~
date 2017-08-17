@@ -25,7 +25,7 @@ class TCP_ENV:
         self.Q = np.array([1.25, 1, 12, 0.25]) ## reward coe1
         self.R = 0.01 ## reward coe2
         self.time = 0 ## time step
-        self.maxtime = 200 ## over this time, regarded as convergence
+        self.maxtime = 100 ## over this time, regarded as convergence
 
     def Init(self):
         self.s = np.random.normal(size=4) * 0.1
@@ -49,7 +49,7 @@ class TCP_ENV:
         if abs(self.s[3]) > 1.5:
             self.terminal = 1
             return
-        if self.time*self.tau > self.maxtime:
+        if self.time > self.maxtime:
             self.terminal = -1
             return
 
